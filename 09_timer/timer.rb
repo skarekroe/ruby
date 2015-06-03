@@ -11,12 +11,11 @@ class Timer
     minutes = @seconds/60%60
     seconds = @seconds%60
 
-    @time_string = add_leading_zero(hours) + ":" + 
-      add_leading_zero(minutes) + ":" + 
-        add_leading_zero(seconds)
+    @time_string = padded(hours) + ":" + padded(minutes) + ":" + 
+        padded(seconds)
   end
 
-  def add_leading_zero(num)
+  def padded(num)
     if num < 10
       str = "0" << num.to_s
     else
